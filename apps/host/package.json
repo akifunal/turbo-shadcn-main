@@ -1,0 +1,40 @@
+{
+	"name": "next",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --port 4200",
+		"build": "next build",
+		"start": "next start",
+		"start-standalone": "node .next/standalone/apps/host/server.js",
+		"lint": "next lint",
+		"clean": "git clean -xdf .turbo node_modules .next .cache tsconfig.tsbuildinfo"
+	},
+	"dependencies": {
+		"@module-federation/nextjs-mf": "^7.0.8",
+		"@module-federation/utilities": "^2.0.7",
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.0.0",
+		"import-meta-resolve": "^3.0.0",
+		"neon": "workspace:*",
+		"next": "^13.4.19",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"tailwind-merge": "^1.14.0",
+		"tailwindcss": "3.3.3",
+		"tailwindcss-animate": "^1.0.6"
+	},
+	"devDependencies": {
+		"@total-typescript/ts-reset": "^0.5.1",
+		"@types/node": "^20.5.1",
+		"@types/react": "^18.2.20",
+		"@types/react-dom": "^18.2.7",
+		"autoprefixer": "^10.4.15",
+		"eslint-config-custom": "workspace:*",
+		"postcss": "^8.4.28",
+		"prettier-config-custom": "workspace:*",
+		"tailwind-config": "workspace:*",
+		"tsconfig": "workspace:*",
+		"typescript": "^5.1.6"
+	}
+}

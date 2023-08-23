@@ -1,0 +1,38 @@
+{
+  "extends": "tsconfig/nextjs.json",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@header/*": [
+        "../header/*"
+      ],
+      "@footer/*": [
+        "../footer/*"
+      ],
+      "~*": [
+        "../../packages/ui/src/*"
+      ]
+    },
+    "strictNullChecks": true
+  },
+  "include": [
+    ".eslintrc.cjs",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
