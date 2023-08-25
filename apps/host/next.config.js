@@ -75,13 +75,16 @@ module.exports = {
 	typescript: {
 		ignoreBuildErrors: true,
 	},
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
 	basePath: '',
 	webpack(config, options) {
 		config.plugins.push(
 			new NextFederationPlugin({
-				name: 'home',
+				name: 'host',
 				filename: 'static/chunks/remoteEntry.js',
-				remotes: remotes(options.isServer),
+				// remotes: remotes(options.isServer),
 				shared: {
 					neon: {
 						singleton: true,

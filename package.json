@@ -1,19 +1,23 @@
 {
-	"private": true,
-	"scripts": {
-		"build": "turbo build",
-		"dev": "turbo dev",
-		"start": "turbo start",
-		"start-standalone": "turbo start-standalone",
-		"lint": "turbo lint",
-		"clean-self": "git clean -xdf .turbo node_modules .cache",
-		"clean": "turbo clean"
-	},
-	"devDependencies": {
-		"prettier-config-custom": "workspace:*",
-		"stylelint": "^15.10.3",
-		"stylelint-config-custom": "workspace:*",
-		"turbo": "latest"
-	},
-	"packageManager": "pnpm@8.6.10"
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "start": "turbo start",
+    "start-standalone": "turbo start-standalone",
+    "lint": "turbo lint",
+    "clean-self": "git clean -xdf .turbo node_modules .cache",
+    "clean": "turbo clean",
+    "list-packages": "npx syncpack list",
+    "list-mismatches": "npx syncpack list-mismatches",
+    "fix-mismatches": "npx syncpack fix-mismatches && pnpm install"
+  },
+  "devDependencies": {
+    "prettier-config-custom": "workspace:*",
+    "stylelint": "^15.10.3",
+    "stylelint-config-custom": "workspace:*",
+    "syncpack": "^11.2.1",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.6.10"
 }

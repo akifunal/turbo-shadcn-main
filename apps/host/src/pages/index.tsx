@@ -1,85 +1,21 @@
 import { useState } from 'react'
-import RemoteComponent from '@/components'
-import { createDelegatedModule } from '@module-federation/utilities'
-import { Button, Tabs, TabsContent, TabsList, TabsTrigger } from 'neon'
+import { Button, Input } from 'neon'
 
-// import Footer from 'footer/index'
-// import Plp from 'plp/index'
-
-// import Footer from 'footer/index';
-
-// const Header = dynamic(() => import('header/index'), {
-// 	loading: () => <p>Header Loading.....</p>,
-// 	ssr: false,
-// })
-
-// const Footer = dynamic(() => import('footer/index'), {
-// 	loading: () => <p>Footer Loading.....</p>,
-// 	ssr: false,
-// })
-
-// const url = 'footer/index'
-
-// const paths = {
-// 	header: 'header/index',
-// 	footer: 'footer/index',
-// }
-
-// const dynamicComponents = {
-// 	// Header: dynamic(() => import('header/index'), {
-// 	// 	loading: () => <p>Header Loading.....</p>,
-// 	// 	ssr: false,
-// 	// }),
-// 	// Footer: dynamic(() => import('footer/index'), {
-// 	// 	loading: () => <p>Header Loading.....</p>,
-// 	// 	ssr: false,
-// 	// }),
-// 	Dynamic: dynamic(() => import(url), {
-// 		loading: () => <p>Header Loading.....</p>,
-// 		ssr: false,
-// 	}),
-// }
-
-// const getDynamicComponent = (c: string) => dynamicComponents?.[c]
-
-// const Header = lazy(() => import('header/index'))
-
-// const Footer = lazy(() => import('footer/index'))
-
-// const getDynamicComponent = (c: string) =>
-// 	dynamic(() => import(c), {
-// 		loading: () => <p>Header Loading.....</p>,
-// 		ssr: false,
-// 	})
+import RemoteComponent from '@/components/RemoteComponent'
 
 interface IndexProps {
 	data: string
 }
 
-const remote = 'header@http://localhost:3333/_next/static/chunks/remoteEntry.js'
-
-const Test = () =>
-	createDelegatedModule(require.resolve('../../remote-delegate.cjs'), {
-		remote: remote,
-	})
-
-export function Index({ data }: IndexProps) {
-	const [pageName, setPageName] = useState<string>('Header')
-	const [pageUrl, setPageUrl] = useState<string>('header/index')
+const Index = ({ data }: IndexProps) => {
 	const [isHeader, setIsHeader] = useState<boolean>(false)
-	const [port, setPort] = useState<number>(3333)
+	const [isFooter, setIsFooter] = useState<boolean>(false)
+	const [number, setNumber] = useState<number>(0)
 
-	console.log('🚀 ~ Index ~ TEST:', Test())
-	// console.log('🚀 ~ Index ~ port:', port)
-
-	// const DynamicComponent = getDynamicComponent('header/index')
-	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-	// const DynamicComponent = dynamicComponents?.[pageName]
-	// const DynamicComponent = getDynamicComponent(pageUrl)
-
-	// if (!DynamicComponent) {
-	// 	return <div>Component not found</div>
-	// }
+	const handleHostClick = (n: number) => {
+		console.log('handleHostClick called with n: ', n)
+		setNumber(n)
+	}
 
 	return (
 		<div>
@@ -92,58 +28,70 @@ export function Index({ data }: IndexProps) {
 					<Button variant='link' onClick={() => setIsHeader(true)}>
 						Get Header
 					</Button>
-					<Button variant='link' onClick={() => setPort('3334')}>
+					<Button variant='link' onClick={() => setIsFooter(true)}>
 						Get Footer
 					</Button>
-					{/* <Button
-						variant='link'
-						onClick={() => setPort('footer/index')}
-					>
-						Get Dynamic
-					</Button> */}
 				</div>
 				<p className='mt-4'>Content:</p>
+				<Input type="text" />
 				<div className='mb-4 border-2 border-red-500 p-5'>
-					{/* <Suspense fallback={<div>Loading...</div>}> */}
-					{/* <DynamicComponent /> */}
-					{/* {typeof window !== 'undefined' && ( */}
 					<RemoteComponent
 						// Text displayed while the component is being fetched
 						fallback='Loading...'
 						// Which remote to fetch the component from
-						remote='header'
-						remoteUrl={`http://localhost:3333/_next/static/chunks`}
+						scope='header'
+						url='http://localhost:3333'
 						// Name of the React component exposed in our remote app
 						module='index'
+						welcomeText='welcome'
 					/>
-
-					{Test()}
+					<RemoteComponent
+						// Text displayed while the component is being fetched
+						fallback='Loading...'
+						// Which remote to fetch the component from
+						scope='footer'
+						url='http://localhost:3334'
+						// Name of the React component exposed in our remote app
+						module='index'
+						customerId={123 + 10}
+					/>
 
 					{isHeader && (
 						<RemoteComponent
 							// Text displayed while the component is being fetched
 							fallback='Loading...'
 							// Which remote to fetch the component from
-							remote='footer'
-							remoteUrl={`http://localhost:3334/_next/static/chunks`}
+							scope='header'
+							url='http://localhost:3333'
 							// Name of the React component exposed in our remote app
 							module='index'
 						/>
 					)}
-					{/* )} */}
-					{/* </Suspense> */}
+
+					{isFooter && (
+						<RemoteComponent
+							// Text displayed while the component is being fetched
+							fallback='Loading...'
+							// Which remote to fetch the component from
+							scope='footer'
+							url='http://localhost:3334'
+							// Name of the React component exposed in our remote app
+							module='index'
+							cb={handleHostClick}
+						/>
+					)}
 				</div>
 				{/* <p className='mt-8'>Header Micro-frontend:</p>
 				<div className='mb-4 border-2 border-red-500 p-5'>
 					<Header />
-				</div> */}
-				{/* <p>PLP Micro-frontend:</p>
+				</div>
+				<p>PLP Micro-frontend:</p>
 				<Suspense fallback={<div>Plp Loading...</div>}>
 					<div className='mb-4 border-2 border-green-500'>
 						<Plp />
 					</div>
-				</Suspense> */}
-				{/* <p className='mt-8'>Footer Micro-frontend:</p>
+				</Suspense>
+				<p className='mt-8'>Footer Micro-frontend:</p>
 				<div className='border-2 border-red-500 p-5'>
 					<Footer />
 				</div> */}
