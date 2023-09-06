@@ -1,8 +1,8 @@
+import { memo } from 'react'
 import dynamic from 'next/dynamic'
 import { importRemote } from '@module-federation/utilities'
 
 import ErrorBoundary from '@/components/ErrorBoundary'
-import { memo } from 'react'
 
 interface RemoteComponentProps {
 	url: string
@@ -26,7 +26,13 @@ const RemoteComponent = ({
 	...props
 }: RemoteComponentProps) => {
 	const Component = dynamic(
-		() => importRemote({ url: getFormattedUrl(url), scope, module }),
+		() => {
+			return importRemote({
+				url: getFormattedUrl(url),
+				scope,
+				module,
+			})
+		},
 		{
 			loading: () => <p>Loading...</p>,
 			//! Ssr getting error for window is not defined

@@ -1,7 +1,7 @@
 // Inspired by react-hot-toast library
 import * as React from 'react'
 
-import type { ToastActionElement, ToastProps } from './toast'
+import type { ToastActionElement, ToastProps } from '@/components/toast'
 
 const TOAST_LIMIT = 1
 const TOAST_REMOVE_DELAY = 1000000
@@ -24,7 +24,6 @@ let count = 0
 
 function genId() {
 	count = (count + 1) % Number.MAX_VALUE
-
 	return count.toString()
 }
 
@@ -61,10 +60,9 @@ const addToRemoveQueue = (toastId: string) => {
 
 	const timeout = setTimeout(() => {
 		toastTimeouts.delete(toastId)
-		// eslint-disable-next-line @typescript-eslint/no-use-before-define
 		dispatch({
 			type: 'REMOVE_TOAST',
-			toastId,
+			toastId: toastId,
 		})
 	}, TOAST_REMOVE_DELAY)
 
@@ -95,8 +93,8 @@ export const reducer = (state: State, action: Action): State => {
 			if (toastId) {
 				addToRemoveQueue(toastId)
 			} else {
-				state.toasts.forEach((t) => {
-					addToRemoveQueue(t.id)
+				state.toasts.forEach((toast) => {
+					addToRemoveQueue(toast.id)
 				})
 			}
 
@@ -119,7 +117,6 @@ export const reducer = (state: State, action: Action): State => {
 					toasts: [],
 				}
 			}
-
 			return {
 				...state,
 				toasts: state.toasts.filter((t) => t.id !== action.toastId),
@@ -143,10 +140,10 @@ type Toast = Omit<ToasterToast, 'id'>
 function toast({ ...props }: Toast) {
 	const id = genId()
 
-	const update = (p: ToasterToast) =>
+	const update = (props: ToasterToast) =>
 		dispatch({
 			type: 'UPDATE_TOAST',
-			toast: { ...p, id },
+			toast: { ...props, id },
 		})
 	const dismiss = () => dispatch({ type: 'DISMISS_TOAST', toastId: id })
 
@@ -163,7 +160,7 @@ function toast({ ...props }: Toast) {
 	})
 
 	return {
-		id,
+		id: id,
 		dismiss,
 		update,
 	}
@@ -174,10 +171,8 @@ function useToast() {
 
 	React.useEffect(() => {
 		listeners.push(setState)
-
 		return () => {
 			const index = listeners.indexOf(setState)
-
 			if (index > -1) {
 				listeners.splice(index, 1)
 			}

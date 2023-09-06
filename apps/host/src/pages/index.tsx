@@ -33,7 +33,7 @@ const Index = ({ data }: IndexProps) => {
 					</Button>
 				</div>
 				<p className='mt-4'>Content:</p>
-				<Input type="text" />
+				<Input type='text' />
 				<div className='mb-4 border-2 border-red-500 p-5'>
 					<RemoteComponent
 						// Text displayed while the component is being fetched

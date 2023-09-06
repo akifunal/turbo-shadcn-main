@@ -1,16 +1,22 @@
 import { type AppProps } from 'next/app'
+import { Inter } from 'next/font/google'
 import Head from 'next/head'
 
-import 'neon/styles.css'
+// import 'neon/styles.css'
 import '@/styles/globals.css'
+
+const inter = Inter({
+	subsets: ['latin'],
+	variable: '--font-inter',
+})
 
 function CustomApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Head>
-				<title>Welcome to next-host-2!</title>
+				<title>Host App</title>
 			</Head>
-			<main>
+			<main className={`${inter.variable} font-sans`}>
 				<Component {...pageProps} />
 			</main>
 		</>

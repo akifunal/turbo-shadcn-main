@@ -19,6 +19,9 @@
 			"dependsOn": ["^build"],
 			"persistent": true
 		},
-		"start-standalone": {}
+		"start-standalone": {
+			"dependsOn": ["^build"],
+			"persistent": true
+		}
 	}
 }

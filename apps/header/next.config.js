@@ -1,16 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-// this enables you to use import() and the webpack parser
-// loading remotes on demand, not ideal for SSR
-import path from 'path'
-import { fileURLToPath } from 'url'
-import NextFederationPlugin from '@module-federation/nextjs-mf'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const NextFederationPlugin = require('@module-federation/nextjs-mf')
+const path = require('node:path')
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -36,11 +25,10 @@ const config = {
 		typedRoutes: true,
 	},
 	basePath: '',
-	webpack(config, options) {
+	webpack(config) {
 		config.plugins.push(
 			new NextFederationPlugin({
 				name: 'header',
-				// filename: 'standalone/remoteEntry.js',
 				filename: 'static/chunks/remoteEntry.js',
 				exposes: {
 					'./index': './src/pages/index.tsx',
@@ -52,4 +40,4 @@ const config = {
 	},
 }
 
-export default config
+module.exports = config
