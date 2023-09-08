@@ -1,10 +1,3 @@
-// import path from 'path'
-// import { fileURLToPath } from 'url'
-// import NextFederationPlugin from '@module-federation/nextjs-mf'
-
-// const __filename = fileURLToPath(import.meta.url)
-// const __dirname = path.dirname(__filename)
-
 const NextFederationPlugin = require('@module-federation/nextjs-mf')
 const path = require('node:path')
 
@@ -42,12 +35,6 @@ const config = {
 			new NextFederationPlugin({
 				name: 'host',
 				filename: 'static/chunks/remoteEntry.js',
-				// shared: {
-				// 	neon: {
-				// 		singleton: true,
-				// 		eager: true,
-				// 	},
-				// },
 			}),
 		)
 

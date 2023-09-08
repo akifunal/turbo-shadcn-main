@@ -1,11 +1,14 @@
 {
-  "name": "tsconfig",
-  "version": "0.1.0",
-  "license": "MIT",
-  "main": "base.json",
-  "files": [
-    "base.json",
-    "nextjs.json",
-    "react-library.json"
-  ]
+	"name": "@akifunal/tsconfig",
+	"version": "0.0.0",
+	"license": "MIT",
+	"main": "base.json",
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"base.json",
+		"nextjs.json",
+		"react-library.json"
+	]
 }

@@ -14,19 +14,7 @@
 		"jsx": "preserve",
 		"incremental": true,
 		"noUncheckedIndexedAccess": true,
-		"allowSyntheticDefaultImports": true,
-		"paths": {
-			"@host/*": ["../apps/host/*"],
-			"@header/*": ["../apps/header/*"],
-			"@checkout/*": ["../apps/checkout/*"],
-			"@store/*": ["apps/store/*"],
-			"@nextjs-nx-module-federation/design-system": [
-				"libs/design-system/src/index.ts"
-			],
-			"@nextjs-nx-module-federation/design-system/*": [
-				"libs/design-system/src/*"
-			]
-		}
+		"allowSyntheticDefaultImports": true
 	},
 	"include": ["src"],
 	"exclude": ["node_modules"]

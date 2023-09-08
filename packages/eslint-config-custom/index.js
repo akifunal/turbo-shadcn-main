@@ -9,6 +9,7 @@ const config = {
 		'next/core-web-vitals',
 		'plugin:@typescript-eslint/recommended-type-checked',
 		'plugin:@typescript-eslint/stylistic-type-checked',
+		'turbo',
 		'plugin:tailwindcss/recommended',
 		'prettier',
 	],
@@ -29,13 +30,9 @@ const config = {
 			'warn',
 			{ argsIgnorePattern: '^_' },
 		],
-		// 'tailwindcss/no-custom-classname': [
-		// 	'warn',
-		// 	{
-		// 		whitelist: ['destructive'],
-		// 	},
-		// ],
+		'tailwindcss/no-custom-classname': ['off'],
 	},
+	ignorePatterns: ['node_modules/', 'dist/', 'out/'],
 }
 
 module.exports = config

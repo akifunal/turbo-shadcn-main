@@ -5,15 +5,16 @@ const config = {
 	source: ['package.json', 'apps/*/package.json', 'packages/*/package.json'],
 	versionGroups: [
 		{
-			label: 'Internal config packages should be pinned to "*" (meaning any version is acceptable)',
+			label: 'Internal config packages should be pinned to "workspace:*" (meaning any version is acceptable)',
 			packages: ['**'],
 			dependencies: [
-				'config-prettier',
-				'config-tsconfig',
-				'eslint-config-tds',
+				'eslint-config-custom',
+				'prettier-config-custom',
+				'tailwind-config',
+				'tsconfig',
 			],
 			dependencyTypes: ['dev'],
-			pinVersion: '*',
+			pinVersion: 'workspace:*',
 		},
 	],
 }

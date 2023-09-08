@@ -1,13 +1,24 @@
 {
-	"name": "neon",
-	"version": "0.0.0",
+	"name": "@akifunal/ui-lib-test",
+	"version": "0.0.5",
 	"sideEffects": false,
-	"main": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
+	"main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts",
+	"type": "module",
 	"exports": {
-		".": "./dist/index.mjs",
-		"./styles.css": "./dist/styles.css"
+		".": "./dist/src/index.js",
+		"./styles.css": "./dist/src/styles.css",
+		"./postcss.config.cjs": "./postcss.config.cjs",
+		"./tailwind.config": {
+			"types": "./dist/tailwind.config.d.ts",
+			"import": "./dist/tailwind.config.js"
+		}
 	},
+	"files": [
+		"dist",
+		"theme.css",
+		"postcss.config.cjs"
+	],
 	"scripts": {
 		"build": "tsup",
 		"clean": "git clean -xdf dist .turbo node_modules",
@@ -54,27 +65,29 @@
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.0.0",
 		"cmdk": "^0.2.0",
-		"date-fns": "^2.30.0",
 		"react-day-picker": "^8.8.1",
-		"react-hook-form": "^7.45.4",
-		"tailwind-merge": "^1.14.0",
-		"zod": "^3.22.2"
+		"react-hook-form": "^7.46.1",
+		"tailwind-merge": "^1.14.0"
 	},
 	"devDependencies": {
-		"@types/node": "^20.5.7",
+		"@types/node": "^20.5.9",
 		"@types/react": "^18.2.21",
+		"autoprefixer": "^10.4.15",
 		"eslint": "^8.48.0",
 		"eslint-config-custom": "workspace:*",
-		"postcss": "^8.4.28",
+		"postcss": "^8.4.29",
+		"postcss-import": "^15.1.0",
 		"prettier": "^3.0.3",
 		"prettier-config-custom": "workspace:*",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"tailwind-config": "workspace:*",
 		"tailwindcss": "^3.3.3",
 		"tailwindcss-animate": "^1.0.7",
 		"tsconfig": "workspace:*",
 		"tsup": "^7.2.0",
 		"typescript": "^5.2.2"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
