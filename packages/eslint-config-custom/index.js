@@ -32,7 +32,7 @@ const config = {
 		],
 		'tailwindcss/no-custom-classname': ['off'],
 	},
-	ignorePatterns: ['node_modules/', 'dist/', 'out/'],
+	ignorePatterns: ['node_modules/', 'dist/', 'out/', '.next/'],
 }
 
 module.exports = config

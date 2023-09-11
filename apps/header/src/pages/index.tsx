@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Badge, Button, Input } from 'neon'
+import { Badge, Button, Input } from 'ui'
 
 // import 'tailwindcss/tailwind.css'
 import 'tailwindcss/utilities.css'

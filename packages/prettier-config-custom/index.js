@@ -42,4 +42,4 @@ const config = {
 	pluginSearchDirs: false, // needed for tailwindcss plugin
 }
 
-module.exports = config
+export default config

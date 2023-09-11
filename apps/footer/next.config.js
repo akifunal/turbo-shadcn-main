@@ -4,7 +4,7 @@ const path = require('node:path')
 /** @type {import("next").NextConfig} */
 const config = {
 	output: 'export',
-	transpilePackages: ['neon'],
+	transpilePackages: ['ui'],
 	reactStrictMode: true,
 	images: {
 		domains: [''],

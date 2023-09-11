@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Input } from 'neon'
+import { Button, Input } from 'ui'
 
 import RemoteComponent from '@/components/RemoteComponent'
 

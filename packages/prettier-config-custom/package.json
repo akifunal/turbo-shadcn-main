@@ -1,10 +1,17 @@
 {
-	"name": "@akifunal/prettier-config-custom",
+	"name": "prettier-config-custom",
 	"version": "0.1.0",
 	"main": "index.js",
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
+	},
+	"scripts": {
+		"clean": "git clean -xdf .turbo node_modules"
+	},
+	"peerDependencies": {
+		"@ianvs/prettier-plugin-sort-imports": "^4.1.0",
+		"prettier-plugin-tailwindcss": "^0.5.4"
 	},
 	"devDependencies": {
 		"@ianvs/prettier-plugin-sort-imports": "^4.1.0",

@@ -1,6 +1,4 @@
-import { Button } from 'neon'
-
-// import '../styles/globals.css'
+import { Button } from 'ui'
 
 import 'tailwindcss/utilities.css'
 

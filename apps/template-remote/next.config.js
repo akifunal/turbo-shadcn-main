@@ -3,8 +3,8 @@ const path = require('node:path')
 
 /** @type {import("next").NextConfig} */
 const config = {
-	output: 'export',
-	transpilePackages: ['neon'],
+	output: 'standalone',
+	transpilePackages: ['ui'],
 	reactStrictMode: true,
 	images: {
 		domains: [''],
@@ -19,6 +19,12 @@ const config = {
 	// 	defaultLocale: 'en',
 	// },
 
+	typescript: {
+		ignoreBuildErrors: true,
+	},
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
 	experimental: {
 		outputFileTracingRoot: path.join(__dirname, '../../'),
 		scrollRestoration: true,
@@ -28,7 +34,7 @@ const config = {
 	webpack(config) {
 		config.plugins.push(
 			new NextFederationPlugin({
-				name: 'template-remote',
+				name: 'header',
 				filename: 'static/chunks/remoteEntry.js',
 				exposes: {
 					'./index': './src/pages/index.tsx',

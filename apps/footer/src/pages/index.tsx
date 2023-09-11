@@ -1,4 +1,4 @@
-import { Button } from 'neon'
+import { Button } from 'ui'
 
 // import '../styles/globals.css'
 

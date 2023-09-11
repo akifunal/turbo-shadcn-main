@@ -1,2 +1,2 @@
 // @ts-expect-error - No types for postcss
-module.exports = require('neon/postcss.config.cjs')
+module.exports = require('ui/postcss')

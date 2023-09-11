@@ -1,5 +1,5 @@
 {
-	"name": "@akifunal/tailwind-config",
+	"name": "tailwind-config",
 	"version": "0.0.0",
 	"main": "index.ts",
 	"license": "MIT",

@@ -1,5 +1,5 @@
 {
-	"name": "@akifunal/tsconfig",
+	"name": "tsconfig",
 	"version": "0.0.0",
 	"license": "MIT",
 	"main": "base.json",
@@ -10,5 +10,9 @@
 		"base.json",
 		"nextjs.json",
 		"react-library.json"
-	]
+	],
+	"scripts": {
+		"format": "prettier -c .",
+		"format:fix": "prettier --write ."
+	}
 }

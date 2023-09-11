@@ -1,12 +1,39 @@
 {
 	"editor.formatOnSave": true,
-	// "editor.formatOnSaveMode": "modificationsIfAvailable",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.organizeImports": false
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 	"css.validate": false,
 	"editor.quickSuggestions": {
 		"strings": true
 	},
 	"files.associations": {
-		"*.css": "tailwindcss",
-		"*.scss": "tailwindcss"
-	}
+		"*.css": "tailwindcss"
+	},
+	"tailwindCSS.classAttributes": [
+		"class",
+		"className",
+		"ngClass",
+		"cn",
+		"clsx",
+		"twMerge"
+	],
+	"tailwindCSS.experimental.classRegex": [
+		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+		["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+	]
 }

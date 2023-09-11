@@ -11,7 +11,7 @@ const path = require('node:path')
 /** @type {import("next").NextConfig} */
 const config = {
 	output: 'standalone',
-	transpilePackages: ['neon'],
+	transpilePackages: ['ui'],
 	reactStrictMode: true,
 	images: {
 		domains: [''],

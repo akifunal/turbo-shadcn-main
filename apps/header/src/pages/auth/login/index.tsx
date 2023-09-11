@@ -1,8 +1,7 @@
 import { type Metadata } from 'next'
 import Link from 'next/link'
-import { buttonVariants } from 'neon'
-
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib'
+import { buttonVariants } from 'ui'
 
 import UserAuthForm from './user-auth-form'
 

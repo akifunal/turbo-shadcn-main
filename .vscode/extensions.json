@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"bradlc.vscode-tailwindcss",
+		"aaron-bond.better-comments",
+		"ms-playwright.playwright",
+		"yoavbls.pretty-ts-errors",
+		"rangav.vscode-thunder-client"
+	]
+}
