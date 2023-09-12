@@ -1,3 +1,5 @@
+// @ts-check
+
 const NextFederationPlugin = require('@module-federation/nextjs-mf')
 const path = require('node:path')
 
@@ -20,8 +22,6 @@ const config = {
 	},
 	experimental: {
 		outputFileTracingRoot: path.join(__dirname, '../../'),
-		scrollRestoration: true,
-		typedRoutes: true,
 	},
 	typescript: {
 		ignoreBuildErrors: true,

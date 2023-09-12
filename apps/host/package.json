@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "rm -rf .next && next dev",
+		"dev": "next dev",
 		"build": "next build && mv .next/static .next/standalone/apps/host/.next",
 		"start": "next start",
 		"start-standalone": "node .next/standalone/apps/host/server.js",
@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@module-federation/nextjs-mf": "^7.0.8",
-		"@module-federation/utilities": "^2.0.7",
+		"@module-federation/utilities": "^3.0.0",
 		"next": "^13.4.19",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -23,10 +23,10 @@
 	},
 	"devDependencies": {
 		"@total-typescript/ts-reset": "^0.5.1",
-		"@types/node": "^20.5.9",
+		"@types/node": "^20.6.0",
 		"@types/react": "^18.2.21",
 		"@types/react-dom": "^18.2.7",
-		"eslint": "^8.48.0",
+		"eslint": "^8.49.0",
 		"eslint-config-custom": "workspace:*",
 		"prettier": "^3.0.3",
 		"prettier-config-custom": "workspace:*",

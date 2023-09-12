@@ -3,7 +3,7 @@ const path = require('node:path')
 
 /** @type {import("next").NextConfig} */
 const config = {
-	output: 'standalone',
+	output: 'export',
 	transpilePackages: ['ui'],
 	reactStrictMode: true,
 	images: {
@@ -19,16 +19,8 @@ const config = {
 	// 	defaultLocale: 'en',
 	// },
 
-	typescript: {
-		ignoreBuildErrors: true,
-	},
-	eslint: {
-		ignoreDuringBuilds: true,
-	},
 	experimental: {
 		outputFileTracingRoot: path.join(__dirname, '../../'),
-		scrollRestoration: true,
-		typedRoutes: true,
 	},
 	basePath: '',
 	webpack(config) {

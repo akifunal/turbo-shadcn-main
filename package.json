@@ -8,9 +8,9 @@
 		"serve": "turbo serve",
 		"format": "turbo format",
 		"format:fix": "turbo format:fix",
-		"format:fix1": "prettier --write \"**/*.{js,jsx,cjs,ts,tsx,md,mdx}\"",
 		"lint": "turbo lint",
-		"lint:fix": "next lint --fix .",
+		"lint:fix": "turbo lint:fix",
+		"types:check": "turbo types:check",
 		"clean-self": "git clean -xdf .turbo node_modules .cache",
 		"clean": "turbo clean",
 		"list-packages": "npx syncpack list",
@@ -21,9 +21,7 @@
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.26.2",
-		"@ianvs/prettier-plugin-sort-imports": "^4.1.0",
 		"prettier-config-custom": "workspace:*",
-		"prettier-plugin-tailwindcss": "^0.5.4",
 		"syncpack": "^11.2.1",
 		"turbo": "latest"
 	},

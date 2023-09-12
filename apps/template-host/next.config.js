@@ -1,10 +1,3 @@
-// import path from 'path'
-// import { fileURLToPath } from 'url'
-// import NextFederationPlugin from '@module-federation/nextjs-mf'
-
-// const __filename = fileURLToPath(import.meta.url)
-// const __dirname = path.dirname(__filename)
-
 const NextFederationPlugin = require('@module-federation/nextjs-mf')
 const path = require('node:path')
 
@@ -25,13 +18,9 @@ const config = {
 		locales: ['en'],
 		defaultLocale: 'en',
 	},
-	typescript: {
-		ignoreBuildErrors: true,
-	},
+
 	experimental: {
 		outputFileTracingRoot: path.join(__dirname, '../../'),
-		scrollRestoration: true,
-		typedRoutes: true,
 	},
 	basePath: '',
 	webpack(config) {

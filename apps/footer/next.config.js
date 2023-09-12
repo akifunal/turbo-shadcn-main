@@ -21,8 +21,6 @@ const config = {
 
 	experimental: {
 		outputFileTracingRoot: path.join(__dirname, '../../'),
-		scrollRestoration: true,
-		typedRoutes: true,
 	},
 	basePath: '',
 	webpack(config) {

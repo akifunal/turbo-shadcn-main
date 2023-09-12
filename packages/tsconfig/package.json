@@ -1,17 +1,17 @@
 {
-	"name": "tsconfig",
-	"version": "0.0.4",
-	"license": "MIT",
-	"main": "base.json",
-	"publishConfig": {
-		"access": "public"
-	},
-	"files": [
-		"base.json",
-		"nextjs.json",
-		"react-library.json"
-	],
-	"scripts": {
-		"clean": "git clean -xdf .turbo node_modules"
-	}
+  "name": "tsconfig",
+  "version": "0.0.4",
+  "license": "MIT",
+  "main": "base.json",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "base.json",
+    "nextjs.json",
+    "react-library.json"
+  ],
+  "scripts": {
+    "clean": "git clean -xdf .turbo node_modules"
+  }
 }
