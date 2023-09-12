@@ -1,6 +1,6 @@
 // @ts-check
 
-/** @type {import("@ianvs/prettier-plugin-sort-imports").PrettierConfig}} */
+/** @type {import("@ianvs/prettier-plugin-sort-imports").PrettierConfig & import("prettier-plugin-tailwindcss").PluginOptions	}} */
 const config = {
 	jsxSingleQuote: true,
 	singleQuote: true,

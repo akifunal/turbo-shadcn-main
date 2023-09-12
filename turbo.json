@@ -3,9 +3,13 @@
 	"globalDependencies": ["**/.env.*local"],
 	"pipeline": {
 		"lint": {},
-		"lint:fix": {},
+		"lint:fix": {
+			"cache": false
+		},
 		"format": {},
-		"format:fix": {},
+		"format:fix": {
+			"cache": false
+		},
 		"types:check": {},
 		"test": {
 			"dependsOn": ["^build"]

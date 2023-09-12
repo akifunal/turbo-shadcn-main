@@ -34,12 +34,52 @@
 #     "any.go":
 #       runner: go run
 
+# pre-commit:
+#     commands:
+#         testing:
+#             run: npm test
+
+# pre-push:
+#     commands:
+#         anotherTesting:
+#             run: npm test
+
+# pre-commit:
+#     parallel: true
+#     commands:
+#         lint:
+#             glob: '*.{js,ts,jsx,tsx}'
+#             run: pnpm eslint {staged_files} --fix && git add {staged_files}
+#         format:
+#             glob: '*.{js,ts,jsx,tsx,cjs,mjs,md,json}'
+#             run: pnpm prettier {staged_files} -w && git add {staged_files}
+#         types:check:
+#             glob: '*.{ts,tsx}'
+#             run: pnpm tsc --noEmit
+
 pre-commit:
+    parallel: true
+    commands:
+        lint:fix:
+            run: pnpm lint:fix
+        format:fix:
+            run: pnpm format:fix
+        types:check:
+            run: pnpm types:check
+
+post-commit:
     commands:
         testing:
             run: npm test
 
-pre-push:
+# # Use this to build commit messages
+# prepare-commit-msg:
+#     commands:
+#         commitzen:
+#             interactive: true
+#             run: LEFTHOOK=0 pnpm cz
+
+commit-msg:
     commands:
-        anotherTesting:
-            run: npm test
+        'lint commit message':
+            run: pnpm commitlint --edit {1}

@@ -35,7 +35,8 @@
 		"build": "tsup",
 		"clean": "git clean -xdf dist .turbo node_modules",
 		"dev": "tsup --watch",
-		"lint": "eslint src",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix .",
 		"format": "prettier -c .",
 		"format:fix": "prettier --write .",
 		"types:check": "tsc --noEmit"

@@ -28,7 +28,7 @@ export default function AuthenticationPage() {
 							<h1 className='text-2xl font-semibold tracking-tight'>
 								Sign In
 							</h1>
-							<p className='text-sm text-muted-foreground'>
+							<p className='text-sm text-muted-foreground '>
 								Enter your email below to sign in
 							</p>
 						</div>

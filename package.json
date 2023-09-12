@@ -8,6 +8,7 @@
 		"serve": "turbo serve",
 		"format": "turbo format",
 		"format:fix": "turbo format:fix",
+		"format:all": "prettier --write .",
 		"lint": "turbo lint",
 		"lint:fix": "turbo lint:fix",
 		"types:check": "turbo types:check",
@@ -18,14 +19,24 @@
 		"list-mismatches": "npx syncpack list-mismatches",
 		"fix-mismatches": "npx syncpack fix-mismatches && pnpm install",
 		"update-packages": "npx syncpack update && pnpm install",
-		"publish-packages": "turbo run build lint test && changeset version && changeset publish"
+		"publish-packages": "turbo run build lint test && changeset version && changeset publish",
+		"commit": "cz"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.26.2",
+		"@commitlint/cli": "^17.7.1",
+		"@commitlint/config-conventional": "^17.7.0",
+		"commitizen": "^4.3.0",
+		"cz-conventional-changelog": "^3.3.0",
 		"lefthook": "^1.4.10",
 		"prettier-config-custom": "workspace:*",
 		"syncpack": "^11.2.1",
 		"turbo": "latest"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
 	},
 	"packageManager": "pnpm@8.7.5"
 }
