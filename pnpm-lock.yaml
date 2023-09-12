@@ -11,6 +11,9 @@ importers:
       '@changesets/cli':
         specifier: ^2.26.2
         version: 2.26.2
+      lefthook:
+        specifier: ^1.4.10
+        version: 1.4.10
       prettier-config-custom:
         specifier: workspace:*
         version: link:packages/prettier-config-custom
@@ -5225,6 +5228,85 @@ packages:
     dependencies:
       language-subtag-registry: 0.3.22
     dev: false
+
+  /lefthook-darwin-arm64@1.4.10:
+    resolution: {integrity: sha512-mHYTdvsevxwQLMtgDKM8igaY7JUwlGpoMQMrjLiuMuW9SSv0Bl8gZtilEWcxOiWxGcIUwV4Xw+90tlwKQlO7Qg==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-darwin-x64@1.4.10:
+    resolution: {integrity: sha512-rfa9AClAS5gXix0eyv0vV70r7s4jt7dWlR6TSky+rRcxWJ88Vay9U1ZpHlVTAh0karaiHrh6e7AQX+7WbGWUBA==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-freebsd-arm64@1.4.10:
+    resolution: {integrity: sha512-Nh4jEg1OQwsQ+i/kt9XIufQONVj6iEhGWwWoyfycT71wHFCrbNy348Q84EjHTltIUAvE/5jrQdnRDOL6pMZ/Tw==}
+    cpu: [arm64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-freebsd-x64@1.4.10:
+    resolution: {integrity: sha512-3DiI2asrtiYvGXLb6H1ATj7yEj14B6A4c33HLmN5J94PP6rVw6xU2G/PIIAz2wi7/W3igEmuT79F8JJT1mqc7A==}
+    cpu: [x64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-linux-arm64@1.4.10:
+    resolution: {integrity: sha512-gXwTaEYYLfIIPX2Z63aijPSqmvZf003OKjhBB1Og74qWDxfhKs4zZXoWEdc1BARq6U9hImKdyOD/zDc31uB4mw==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-linux-x64@1.4.10:
+    resolution: {integrity: sha512-svWdDgk2hXpcE37yY27DTbyIgnJuqofrNc30cmHonLO3VQC5CyLwp45CiNtY6qxW0UVBxqSuGuZcB2TPZQfyWQ==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-windows-arm64@1.4.10:
+    resolution: {integrity: sha512-ntP30mgAdcbDP1fqL6CXn/60tLXVVYQo0aDLLcI/oBI2ff1Im6zeBDVtujv33KdDVrx5Mu9qi7bQstgG02PzvA==}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook-windows-x64@1.4.10:
+    resolution: {integrity: sha512-MwEGtGpe6EJPfE5jvtxvHsmn2/sQP7+zo2FUf87o2CafmqAOR/R7EvQ7qeg6z6T33cWxnyQSBN23tV10bKhtOQ==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /lefthook@1.4.10:
+    resolution: {integrity: sha512-d0XRT7LoHdPYKNdCQNcIx4arFzTb0fro/PQrwJ1qSLBVlN9ljaYszLqsrVMzTNSPjGU1Pb1FbSw1GMxLG9G8kA==}
+    hasBin: true
+    requiresBuild: true
+    optionalDependencies:
+      lefthook-darwin-arm64: 1.4.10
+      lefthook-darwin-x64: 1.4.10
+      lefthook-freebsd-arm64: 1.4.10
+      lefthook-freebsd-x64: 1.4.10
+      lefthook-linux-arm64: 1.4.10
+      lefthook-linux-x64: 1.4.10
+      lefthook-windows-arm64: 1.4.10
+      lefthook-windows-x64: 1.4.10
+    dev: true
 
   /levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}

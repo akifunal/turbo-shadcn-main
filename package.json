@@ -11,6 +11,7 @@
 		"lint": "turbo lint",
 		"lint:fix": "turbo lint:fix",
 		"types:check": "turbo types:check",
+		"test": "turbo test",
 		"clean-self": "git clean -xdf .turbo node_modules .cache",
 		"clean": "turbo clean",
 		"list-packages": "npx syncpack list",
@@ -21,6 +22,7 @@
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.26.2",
+		"lefthook": "^1.4.10",
 		"prettier-config-custom": "workspace:*",
 		"syncpack": "^11.2.1",
 		"turbo": "latest"
