@@ -1,6 +1,5 @@
 import { useState, type HTMLAttributes, type SyntheticEvent } from 'react'
-import { cn } from '@/lib'
-import { Button, Icons, Input, Label } from 'ui'
+import { Button, cn, Icons, Input, Label } from 'ui'
 
 type UserAuthFormProps = HTMLAttributes<HTMLDivElement>
 

@@ -1,6 +1,6 @@
 // @ts-check
 
-/** @type {import("@ianvs/prettier-plugin-sort-imports").PrettierConfig & import('prettier-plugin-tailwindcss').options}} */
+/** @type {import("@ianvs/prettier-plugin-sort-imports").PrettierConfig}} */
 const config = {
 	jsxSingleQuote: true,
 	singleQuote: true,
@@ -26,12 +26,8 @@ const config = {
 		'',
 		'^[./]',
 	],
-	importOrderSeparation: false,
-	importOrderSortSpecifiers: true,
-	importOrderBuiltinModulesToTop: true,
 	importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
-	importOrderMergeDuplicateImports: true,
-	importOrderCombineTypeAndValueImports: true,
+	importOrderTypeScriptVersion: '5.2.2',
 
 	tailwindFunctions: ['clsx', 'cva', 'tw'],
 
@@ -39,7 +35,6 @@ const config = {
 		'@ianvs/prettier-plugin-sort-imports',
 		'prettier-plugin-tailwindcss',
 	],
-	pluginSearchDirs: false, // needed for tailwindcss plugin
 }
 
-export default config
+module.exports = config

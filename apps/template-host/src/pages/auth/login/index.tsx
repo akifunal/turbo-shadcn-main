@@ -1,7 +1,6 @@
 import { type Metadata } from 'next'
 import Link from 'next/link'
-import { cn } from '@/lib'
-import { buttonVariants } from 'ui'
+import { buttonVariants, cn } from 'ui'
 
 import UserAuthForm from './user-auth-form'
 

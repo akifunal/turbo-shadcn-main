@@ -1,6 +1,6 @@
 {
 	"name": "tsconfig",
-	"version": "0.0.0",
+	"version": "0.0.4",
 	"license": "MIT",
 	"main": "base.json",
 	"publishConfig": {
@@ -12,7 +12,6 @@
 		"react-library.json"
 	],
 	"scripts": {
-		"format": "prettier -c .",
-		"format:fix": "prettier --write ."
+		"clean": "git clean -xdf .turbo node_modules"
 	}
 }

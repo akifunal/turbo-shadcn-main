@@ -1,6 +1,6 @@
-import React from 'react'
+import { type HTMLAttributes } from 'react'
 
-type IconProps = React.HTMLAttributes<SVGElement>
+type IconProps = HTMLAttributes<SVGElement>
 
 export const Icons = {
 	twitter: (props: IconProps) => (
