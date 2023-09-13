@@ -51,7 +51,6 @@
 #             glob: '*.{js,ts,jsx,tsx}'
 #             run: pnpm eslint {staged_files} --fix && git add {staged_files}
 #         format:
-#             glob: '*.{js,ts,jsx,tsx,cjs,mjs,md,json}'
 #             run: pnpm prettier {staged_files} -w && git add {staged_files}
 #         types:check:
 #             glob: '*.{ts,tsx}'
@@ -61,16 +60,16 @@ pre-commit:
     parallel: true
     commands:
         lint:fix:
-            run: pnpm lint:fix
-        format:fix:
-            run: pnpm format:fix
+            run: pnpm lint:fix && git add {staged_files}
+        format:
+            run: pnpm prettier {staged_files} -w && git add {staged_files}
         types:check:
             run: pnpm types:check
 
 post-commit:
     commands:
         testing:
-            run: npm test
+            run: pnpm test
 
 # # Use this to build commit messages
 # prepare-commit-msg:
