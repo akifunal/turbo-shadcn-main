@@ -8,7 +8,7 @@
 		"serve": "turbo serve",
 		"format": "turbo format",
 		"format:fix": "turbo format:fix",
-		"format:all": "prettier --write .",
+		"format:fix:all": "prettier --write .",
 		"lint": "turbo lint",
 		"lint:fix": "turbo lint:fix",
 		"types:check": "turbo types:check",

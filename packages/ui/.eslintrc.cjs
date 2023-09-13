@@ -6,7 +6,7 @@ const config = {
 		browser: true,
 		es6: true,
 	},
-	extends: ['custom'],
+	extends: ['custom/base'],
 	parserOptions: {
 		babelOptions: {
 			caller: {
