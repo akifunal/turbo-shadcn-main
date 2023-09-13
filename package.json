@@ -28,7 +28,7 @@
 		"@commitlint/config-conventional": "^17.7.0",
 		"commitizen": "^4.3.0",
 		"cz-conventional-changelog": "^3.3.0",
-		"lefthook": "^1.4.10",
+		"lefthook": "^1.4.11",
 		"prettier-config-custom": "workspace:*",
 		"syncpack": "^11.2.1",
 		"turbo": "latest"
